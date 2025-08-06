@@ -1,9 +1,18 @@
-<!DOCTYPE html>
+.hero-video-container {
+                margin: 1.5rem 0;
+            }
+
+            .hero-video-iframe {
+                height: 250px;
+            }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calibre Media - Digital Marketing for Tradies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +21,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #fff;
             background: #0a0a0a;
@@ -53,12 +62,19 @@
             background: 
                 radial-gradient(ellipse at top, transparent 0%, rgba(0, 0, 0, 0.4) 100%),
                 url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg%3E%3Ccircle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.02)"/%3E%3C/g%3E%3C/svg%3E');
+            animation: float-particles 40s linear infinite;
         }
 
         @keyframes drift {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            33% { transform: rotate(120deg) scale(1.1); }
-            66% { transform: rotate(240deg) scale(0.9); }
+            0%, 100% { transform: rotate(0deg) scale(1) translate(0, 0); }
+            25% { transform: rotate(90deg) scale(1.1) translate(50px, -50px); }
+            50% { transform: rotate(180deg) scale(0.9) translate(-30px, 30px); }
+            75% { transform: rotate(270deg) scale(1.05) translate(40px, 20px); }
+        }
+
+        @keyframes float-particles {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-60px); }
         }
 
         /* Noise texture overlay */
@@ -81,17 +97,17 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.8);
+            background: transparent;
             backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 1.5rem 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         header.scrolled {
             padding: 1rem 0;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav {
@@ -105,7 +121,7 @@
 
         .logo {
             font-size: 1.4rem;
-            font-weight: 800;
+            font-weight: 400;
             color: #fff;
             text-decoration: none;
             letter-spacing: -0.5px;
@@ -114,6 +130,10 @@
 
         .logo:hover {
             color: #ff5e00;
+        }
+
+        .logo b {
+            font-weight: 800;
         }
 
         .nav-links {
@@ -177,7 +197,22 @@
             align-items: center;
             position: relative;
             z-index: 10;
-            padding: 0 3rem;
+            padding: 120px 3rem 0 3rem;
+        }
+
+        .hero-video-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-video-iframe {
+            width: 100%;
+            height: 450px;
+            display: block;
         }
 
         .hero-content {
@@ -187,12 +222,11 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -2px;
-            max-width: 800px;
         }
 
         .hero h1 span {
@@ -578,9 +612,20 @@
                 font-size: 2.5rem;
             }
 
+            .hero p {
+                font-size: 1rem;
+            }
+
             .cta-group {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                width: 100%;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
             }
 
             .services, .about {
@@ -608,38 +653,6 @@
             padding: 5rem 3rem;
             position: relative;
             z-index: 10;
-            overflow: hidden;
-        }
-
-        .cta-atmosphere {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .cta-glow-1 {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 94, 0, 0.15) 0%, transparent 70%);
-            filter: blur(100px);
-            top: -200px;
-            right: -200px;
-            animation: float-random 15s ease-in-out infinite;
-        }
-
-        .cta-glow-2 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 94, 0, 0.1) 0%, transparent 70%);
-            filter: blur(80px);
-            bottom: -100px;
-            left: -100px;
-            animation: float-random 20s ease-in-out infinite reverse;
         }
 
         .cta-container {
@@ -877,7 +890,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">CALIBRE MEDIA</a>
+            <a href="#" class="logo"><b>CALIBRE |</b> MEDIA</a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#work">Our Work</a></li>
@@ -893,9 +906,13 @@
         <div class="hero-content">
             <h1>Digital Marketing<br><span>For Tradies.</span></h1>
             <p>Calibre Media helps tradies build a strong, professional online presence. We specialise in social media, websites, and branding that make your work stand out.</p>
-            <div class="cta-group">
-                <a href="https://form.typeform.com/to/MbAXU2qc" target="_blank" rel="noopener noreferrer" class="cta-button">Get Started</a>
-                <a href="#work" class="cta-button cta-outline">View Our Work</a>
+            <div class="hero-video-container">
+                <iframe 
+                    src="https://framerusercontent.com/assets/oq0SGdallpcrHtvilhCJKF2tUo.mp4" 
+                    class="hero-video-iframe"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -944,20 +961,20 @@
                     <p>Whether you're on the tools or running the crew, we make sure your business looks the part online so you can win trust, grow your brand, and stay ahead of the pack.</p>
                     <div class="stats">
                         <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Tradies Served</div>
+                            <div class="stat-number">3x</div>
+                            <div class="stat-label">Average ROI</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Client Satisfaction</div>
+                            <div class="stat-number">87%</div>
+                            <div class="stat-label">Lead Increase</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">2.5M</div>
-                            <div class="stat-label">Social Reach</div>
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Support</div>
+                            <div class="stat-number">250k</div>
+                            <div class="stat-label">Monthly Reach</div>
                         </div>
                     </div>
                 </div>
@@ -968,17 +985,13 @@
 
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
-        <div class="cta-atmosphere">
-            <div class="cta-glow-1"></div>
-            <div class="cta-glow-2"></div>
-        </div>
         <div class="container">
             <div class="cta-container fade-up">
                 <div class="cta-content">
                     <h2>Ready to Dominate Your Digital Space?</h2>
                     <p>Stop losing jobs to competitors with better online presence. Let's build your digital empire and get your phone ringing.</p>
                     <div class="cta-action">
-                        <a href="https://form.typeform.com/to/MbAXU2qc" target="_blank" rel="noopener noreferrer" class="cta-primary">Start Building Today</a>
+                        <a href="https://form.typeform.com/to/MbAXU2qc" target="_blank" rel="noopener noreferrer" class="cta-primary">Get Started</a>
                     </div>
                 </div>
             </div>
