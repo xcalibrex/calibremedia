@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calibre Media — Digital Marketing for Elite Tradies</title>
+    <title>Calibre Media — Premium Digital Marketing & Growth</title>
     <meta name="description"
-        content="We forge high-converting digital assets that turn your trade business into a market leader. Premium branding, web design, and marketing for tradies.">
+        content="We forge high-converting digital assets that turn your business into a market leader. Premium branding, web design, and strategic marketing services.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
@@ -196,7 +196,7 @@
             background: var(--text);
             color: var(--bg) !important;
             padding: 0.75rem 1.75rem;
-            border-radius: 8px;
+            border-radius: 200px;
             font-weight: 700 !important;
             transition: var(--transition);
         }
@@ -218,14 +218,19 @@
         }
 
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
             align-items: center;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .hero-content {
             position: relative;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-eyebrow {
@@ -237,27 +242,33 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
         }
 
         .hero-eyebrow::before {
-            content: '';
-            width: 24px;
-            height: 1px;
-            background: var(--accent);
+            display: none;
+        }
+
+        /* New style for centered eyebrow pill if desired, or just keep simple */
+        .hero-eyebrow {
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: 100px;
+            background: var(--glass);
         }
 
         .hero h1 {
-            font-size: clamp(2.75rem, 5vw, 4.5rem);
+            font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 800;
-            line-height: 1.05;
+            line-height: 1.1;
             letter-spacing: -1.5px;
             color: var(--cream);
-            margin-bottom: 1.75rem;
+            margin-bottom: 2rem;
         }
 
         .hero h1 .highlight {
-            display: block;
+            display: inline;
             background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -265,10 +276,10 @@
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 440px;
-            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
             line-height: 1.7;
         }
 
@@ -276,18 +287,19 @@
             display: flex;
             gap: 1.25rem;
             align-items: center;
+            justify-content: center;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 200px;
             transition: var(--transition);
             cursor: pointer;
             border: none;
@@ -324,7 +336,10 @@
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            aspect-ratio: 16/10;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
             background: var(--surface);
             border: 1px solid var(--glass-border);
         }
@@ -1002,19 +1017,18 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-eyebrow fade-up">Digital Marketing</div>
+                    <div class="hero-eyebrow fade-up">Digital Marketing Agency</div>
                     <h1 class="fade-up stagger-1">
-                        Marketing for
-                        <span class="highlight">Elite Tradies.</span>
+                        We Build Brands that
+                        <span class="highlight">Dominate Markets.</span>
                     </h1>
-                    <p class="fade-up stagger-2">We forge high-converting digital assets that turn your trade business
-                        into a market leader. Premium branding, web design, and strategy.</p>
+                    <p class="fade-up stagger-2">We forge high-converting digital assets that turn your business
+                        into a market leader. Premium branding, web design, and growth strategy.</p>
                     <div class="hero-buttons fade-up stagger-3">
                         <a href="https://form.typeform.com/to/MbAXU2qc" target="_blank" class="btn btn-primary">
                             Get Started
                             <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
                         </a>
-                        <a href="#work" class="btn btn-ghost">View Our Work</a>
                     </div>
                 </div>
                 <div class="hero-visual fade-up stagger-4">
@@ -1202,7 +1216,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">CALIBRE <span>MEDIA</span></a>
-                    <p>© 2025. Digital Marketing for Elite Tradies.</p>
+                    <p>© 2025. Premium Digital Growth Services.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#home">Home</a>
